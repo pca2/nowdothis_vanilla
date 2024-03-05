@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NowDoThis - Vanilla JS Version</title>
+    <style>
+        #editArea, #aboutSection, #navigation { display: none; }
+    </style>
+</head>
+<body>
+    <div id="taskList"></div>
+    <div id="navigation">
+        <button id="prevButton">Previous</button>
+        <button id="nextButton">Next</button>
+    </div>
+    <button id="editButton">Edit List</button>
+    <button id="aboutButton">About</button>
+
+    <div id="editArea">
+        <textarea id="taskInput"></textarea>
+        <button id="saveButton">Save</button>
+        <button id="cancelButton">Cancel</button>
+    </div>
+
+    <div id="aboutSection">
+        <p>How do you organize your day? ...</p>
+        <button id="closeAbout">Close</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
