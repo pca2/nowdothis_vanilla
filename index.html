@@ -5,7 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NowDoThis - Vanilla JS Version</title>
     <style>
-        #editArea, #aboutSection, #navigation { display: none; }
+        #editArea,  #navigation { display: none; }
+
+    	
+      ul,ol { list-style: none; }
+      h1,h2,h3,h4,h5,h6,pre,code { font-size: 1em; }
+      ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input { margin: 0; padding: 0; }
+      a img,:link img,:visited img { border: none; }
+      address { font-style: normal; }
+        
+      body { color: #000000; background-color: #FFFFFF; margin: 0px auto; font: 13px "Helvetica Neue"; padding-bottom: 16px; text-align: center;}
+      
+      a {color: #aaa; text-decoration: none; cursor: pointer; }
+      
+      #taskList { font-size: 84px; padding-bottom: 36px; padding-left: 4px; padding-right: 4px; margin: 0px;}
+      h2 { font-size: 72px; color: green; margin: 0px;}
+      
+      #tabs { margin: auto 0px; padding-top: 10px; }
+      
+      #tabs li { cursor: pointer; display: inline; color: #999999; padding: 5px; }
+      #tabs li.current { color: #000000;}
+      
+      #app, #controls,  { padding-top: 35px; }
+
+      #link { padding-top: 16px; padding-bottom: 16px; font: 14px "Helvetica Neue"; }
+      
+      #list {margin-bottom: 12px; }
+      
+      #taskInput { margin: 35px;}
+      #controls {display: block}
+
+
     </style>
 </head>
 <body>
@@ -14,19 +44,15 @@
         <button id="prevButton">Previous</button>
         <button id="nextButton">Next</button>
     </div>
-    <button id="editButton">Edit List</button>
-    <button id="aboutButton">About</button>
 
     <div id="editArea">
-        <textarea id="taskInput"></textarea>
-        <button id="saveButton">Save</button>
-        <button id="cancelButton">Cancel</button>
+        <textarea cols=24 rows=15 r id="taskInput"></textarea>
+        <div id="controls">
+          <button id="saveButton">Save</button>
+          <button id="cancelButton">Cancel</button>
+        </div>
     </div>
-
-    <div id="aboutSection">
-        <p>How do you organize your day? ...</p>
-        <button id="closeAbout">Close</button>
-    </div>
+    <button id="editButton">Edit List</button>
 
     <script src="app.js"></script>
 </body>
