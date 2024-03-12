@@ -4,24 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
     const editButton = document.getElementById('editButton');
-    const aboutButton = document.getElementById('aboutButton');
     const editArea = document.getElementById('editArea');
     const taskInput = document.getElementById('taskInput');
     const saveButton = document.getElementById('saveButton');
     const cancelButton = document.getElementById('cancelButton');
-    const aboutSection = document.getElementById('aboutSection');
-    const closeAbout = document.getElementById('closeAbout');
 
     let tasks = ["take a nap", "buy pen", "organize room"];
     let currentTaskIndex = 0;
-
-    const loadTasks = () => {
-        const storedTasks = localStorage.getItem('tasks');
-        if (storedTasks) {
-            tasks = JSON.parse(storedTasks);
-        }
-        renderCurrentTask();
-    };
 
     const renderCurrentTask = () => {
         if (tasks.length > 0) {
@@ -33,6 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
             taskListEl.textContent = 'No tasks';
             navigation.style.display = 'none';
         }
+    };
+
+    const loadTasks = () => {
+        const storedTasks = localStorage.getItem('tasks');
+        if (storedTasks) {
+            tasks = JSON.parse(storedTasks);
+        }
+        renderCurrentTask();
     };
 
     const updateTaskView = () => {
@@ -61,6 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    loadTasks();
+
     editButton.addEventListener('click', () => {
         taskInput.value = tasks.join('\n');
         editArea.style.display = 'block';
@@ -85,19 +84,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nextButton.addEventListener('click', updateTaskView);
 
-    aboutButton.addEventListener('click', () => {
-        aboutSection.style.display = 'block';
-        taskListEl.style.display = 'none';
-        navigation.style.display = 'none';
-    });
-
-    closeAbout.addEventListener('click', () => {
-        aboutSection.style.display = 'none';
-        taskListEl.style.display = 'block';
-        if (tasks.length > 0) {
-            navigation.style.display = 'block';
-        }
-    });
-
-    loadTasks();
 });
